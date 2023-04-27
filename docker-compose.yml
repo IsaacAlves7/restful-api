@@ -38,8 +38,8 @@ services:
   pgadmin:
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: "danieliver2011@gmail.com"
-      PGADMIN_DEFAULT_PASSWORD: "PgAdmin2019!"
+      PGADMIN_DEFAULT_EMAIL: ""
+      PGADMIN_DEFAULT_PASSWORD: ""
     ports:
       - "16543:80"
     depends_on:
