@@ -83,3 +83,7 @@ COPY . .
 EXPOSE 3000
 CMD [ "node", "server/server.js" ]
 ```
+
+```sh
+psql -h [endpoint rds] -u [usuário] -w postgres
+```
