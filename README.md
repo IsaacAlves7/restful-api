@@ -86,7 +86,7 @@ CMD [ "node", "server/server.js" ]
 
 # 🚀 Deploy in AWS - Amazon Web Services
 
-### Inside Amazon EC2 instance
+### Inside Amazon EC2 instance (public instance)
 ```sh
 psql -h [endpoint rds] -u [usuário] -w postgres
 ```
