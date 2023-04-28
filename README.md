@@ -96,3 +96,8 @@ psql -h [endpoint rds] -u [usuário] -w postgres
 INSERT TO blog.post VALUES(7,'Isaac','DevOps Engineer', '2021-11-01 23:54:02');
 SELECT * FROM blog.post;
 ```
+
+### SSM
+```
+!Sub '{{resolve:ssm-secure:/ECSCluster/${ClusterName}/RDS_ROOT_PASSWORD:1}}'
+```
