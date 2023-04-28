@@ -84,6 +84,14 @@ EXPOSE 3000
 CMD [ "node", "server/server.js" ]
 ```
 
+## Deploy in AWS - Amazon Web Services
+
+### Inside Amazon EC2 instance
 ```sh
 psql -h [endpoint rds] -u [usuário] -w postgres
+```
+
+### Inside Database
+```sql
+INSERT TO blog.post VALUES(7,'Isaac','DevOps Engineer', '2021-11-01 23:54:02');
 ```
