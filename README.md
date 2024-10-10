@@ -33,17 +33,17 @@ Vamos começar com `npm install graphql`, que é a implementação referência p
 npm install graphql
 ```
 
-Como o GraphQL é realmente só uma especificação, usaremos também o pacote de ferramentas **Apollo** para trabalhar com GraphQL:
+<a href="https://www.apollographql.com/docs/apollo-server/"><img src="https://cdn.worldvectorlogo.com/logos/apollo-graphql-compact.svg" align="right" height="77"></a>
+
+Como o GraphQL é realmente só uma especificação, usaremos também o pacote de ferramentas **Apollo** para trabalhar com GraphQL. O Apollo é uma implementação bem completa do GraphQL, ele já tem as ferramentas que precisaremos, começando pelo principal: um servidor GraphQL.
+
+Exemplo: Vamos criar o arquivo `index.js` dentro da pasta "api". Este será nosso ponto de entrada da nossa aplicação.
 
 [![NPM](https://img.shields.io/badge/-npm_install-fff?style=social&logo=NPM&logoColor=red)](#)
 
 ```sh
 npm install apollo-server
 ```
-
-O Apollo é uma implementação bem completa do GraphQL, ele já tem as ferramentas que precisaremos, começando pelo principal: um servidor GraphQL.
-
-Vamos criar o arquivo `index.js` dentro da pasta "api". Este será nosso ponto de entrada da nossa aplicação.
 
 Já instalamos o Apollo Server, agora vamos importá-lo. Por enquanto, queremos apenas o **ApolloServer** do pacote de ferramentas do Apollo:
 
@@ -56,8 +56,6 @@ const { ApolloServer } = require('apollo-server')
 
 const server = new ApolloServer()
 ```
-
-<a href="https://www.apollographql.com/docs/apollo-server/"><img src="https://cdn.worldvectorlogo.com/logos/apollo-graphql-compact.svg" align="right" height="77"></a>
 
 O GraphQL faz uma separação clara entre **estrutura** e **comportamento**.
 
