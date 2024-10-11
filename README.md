@@ -23,6 +23,36 @@ O desenvolvimento fica mais ágil. Se você tem que desenvolver um novo produto 
 
 Fica mais ágil porque o front não fica dependendo tanto do back para criar um endpoint para cada coisa que ele precisa fazer, e o backend fica mais agilizado também sem ter que ficar fazendo todas essas implementações para uma coisa que no final às vezes pode até entrar no sistema ou não.
 
+Vamos testar na prática com alguns testes envolvendo a API GraphQL: Você pode usar o Postman ou <a href="https://app.pipefy.com/graphiql">GraphiQL</a>
+
+Consultar o card do Pipefy:
+
+```gpl
+query {
+  card(id: [card]) {
+    title
+    done
+    id
+    fields {
+      date_value
+      datetime_value
+      filled_at
+      float_value
+      indexName
+      name
+      native_value
+      report_value
+      updated_at
+      value
+    }
+    updated_at
+  }
+}
+```
+
+Como dito anteriormente que poderiamos usar qualquer linguagem de programação com suporte a API GraphQL, vamos ver e comparar as consultas em algumas linguagens de programação:
+
+# [GraphQL] Node.js
 Vamos começar com `npm install graphql`, que é a implementação referência para trabalhar **GraphQL com Node**.
 
 [![NPM](https://img.shields.io/badge/-npm_install-fff?style=social&logo=NPM&logoColor=red)](#)
