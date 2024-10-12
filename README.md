@@ -1,5 +1,5 @@
 # ⚛︎ GraphQL
-<a href="https://github.com/IsaacAlves7/back-end/tree/feature/graphql"><img src="https://cdn.worldvectorlogo.com/logos/graphql-logo-2.svg" height="77" align="right"></a>
+<a href="https://graphql.org/"><img src="https://cdn.worldvectorlogo.com/logos/graphql-logo-2.svg" height="77" align="right"></a>
 
 O **GraphQL** é uma especificação para criar e usar APIs que têm sua própria linguagem de query (consulta). O que isso significa então? É que às vezes o <a href="https://dev.elo.com.br/tutoriais/introducao-ao-graphql">Graphql</a> é entendido ou é percebido como sendo uma tecnologia voltada para bancos de dados, ele não é. Ele é uma especificação para APIs, para escrever, criar e utilizar APIs e não está ligado a nenhum tipo de banco, inclusive ele pode ser usado com qualquer base de dados, ou mesmo nenhuma base de dados. O GraphQL é uma linguagem de queries para manipular dados em APIs e não está vinculada a nenhum banco de dados ou linguagem de programação específica. Não importa se os dados vêm de objetos, de tabelas diferentes, de vários endpoints de uma API. A ideia é que o cliente consiga receber os dados da melhor forma possível. GraphQL é uma especificação pensada na forma como clientes utilizarão os dados, não de que forma estão gravados nem de onde vêm.
 
@@ -51,6 +51,76 @@ query {
 ```
 
 Como dito anteriormente que poderiamos usar qualquer linguagem de programação com suporte a API GraphQL, vamos ver e comparar as consultas em algumas linguagens de programação:
+
+## [GraphQL] SCALAR TYPES
+São tipos que refletem alguns dos tipos de dados que já conhecemos. Para o GraphQL, são os tipos que se resolvem em dados concretos (ao contrário de objetos, por exemplo, que são conjuntos de dados). São eles:
+
+- `Int` - inteiro de 32 bits
+- `Float` - tipo ponto flutuante
+- `String` - sequência de caracteres no formato `UTF-8`
+- `Boolean` - `true` ou `false`
+- `ID` - identificador único, usado normalmente para localizar dados. É possível criar tipos scalar customizados, estudaremos mais adiante.
+
+## [GraphQL] OBJECT TYPE
+Quando trabalhamos com GraphQL, o ideal é pensarmos no uso dos dados, mais do que na forma em que estão armazenados. Pensando nisso, nem sempre queremos retornar um dado concreto, mas sim um conjunto de dados com propriedades específicas — ou seja, um objeto.
+
+Um exemplo de tipo Objeto (Object type) em GraphQL:
+
+```gql
+type Livro {
+    id: ID!
+    titulo: String!
+    autoria: String!
+    paginas: Int!
+    colecoes: [Colecao!]!
+}
+```
+
+No exemplo acima, estamos definindo o **tipo Objeto** `Livro`.
+
+As propriedades que no GraphQL são chamadas de **campos** retornam **tipos scalar**, como `strings` e `inteiros`, e também podem retornar arrays compostas de outros objetos, como no caso de colecoes: `[Colecao!]!`.
+
+> Note que na definição do objeto não está especificado de qual base de dados virão esses dados, apenas quais dados o GraphQL espera receber, e de que tipos.
+
+Os campos marcados com exclamação `!` são campos que não podem ser nulos. Ou seja, qualquer query que envolva estes campos sempre devem ter algum valor do tipo esperado. No caso de colecoes: `[Colecao!]!` a exclamação após o fechamento da array significa que o campo colecoes sempre vai receber uma array (tendo ou não elementos dentro dela); a exclamação em `Colecao!` significa que qualquer elemento dentro da array sempre vai ser um objeto `Colecao`.
+
+## [GraphQL] QUERY TYPE
+
+Os **tipos Query** definem os pontos de entrada (entry points) da API; indicam quais dados o cliente pode receber e de que forma, de certa forma, são como queries do tipo `GET` quando trabalhamos com REST, a diferença aqui é que o cliente tem mais liberdade para montar as queries para receber apenas os dados que precisa lembrando que, para o GraphQL e também para o cliente, não importa a origem desses dados. os dados podem vir de diversas fontes: endpoints REST, bancos SQL e NoSQL, outro servidor GraphQL.
+
+Um exemplo de tipo Query:
+
+```gql
+type Query {
+    livros: [Livro!]!
+    livro(id: ID!): Livro!
+}
+```
+
+Aqui definimos a query `livros`, que retorna uma array composta por **tipos objeto** `Livro`, e a **query** `livro`, que recebe um número de `ID` por parâmetro e retorna um **objeto** `Livro` referente ao `ID` informado.
+
+Uma vez que as queries são os pontos de entrada de uma API GraphQL, toda aplicação vai ter pelo menos uma Query em seu schema.
+
+## [GraphQL] MUTATION TYPE
+
+**Mutations** são os tipos GraphQL utilizados para adicionar, alterar e deletar dados, de forma similar às operações de `POST`, `PUT` e `DELETE` nos CRUDs desenvolvidos em REST.
+
+Os **tipos Query** são obrigatórios em qualquer serviço GraphQL, porém Mutations são opcionais. Um exemplo de tipo Mutation para adicionar um novo livro:
+
+```gql
+type Mutation {
+    adicionaLivro(titulo: String!, autoria: String!, paginas: Int!, colecoes: Colecao!): Livro!
+}
+```
+
+Neste exemplo, temos somente uma **Mutation**, que chamamos de `adicionaLivro` e recebe por parâmetro os dados necessários. Confira os parâmetros com o tipo `Livro` definido anteriormente!
+
+Além dos tipos acima, o GraphQL ainda tem mais tipos básicos:
+
+- Enum,
+- Input,
+- Interface,
+- Union.
 
 # [GraphQL] Node.js
 Vamos começar com `npm install graphql`, que é a implementação referência para trabalhar **GraphQL com Node**.
@@ -216,73 +286,3 @@ Acabamos de criar nosso primeiro tipo, ainda vamos criar vários tipos, vamos fa
 Então, como falamos anteriormente, o GraphQL tem sua própria linguagem, chamada de SDL, ou Schema Definition Language, linguagem de definição de schema. Isso porque é possível implementar o GraphQL em conjunto com qualquer outra linguagem, então a SDL serve para fazer essa integração de forma agnóstica.
 
 Para entender como essa linguagem funciona, sempre temos que ter em mente que o GraphQL trabalha com tipos, e saber quais tipos são esses.
-
-## [GraphQL] SCALAR TYPES
-São tipos que refletem alguns dos tipos de dados que já conhecemos. Para o GraphQL, são os tipos que se resolvem em dados concretos (ao contrário de objetos, por exemplo, que são conjuntos de dados). São eles:
-
-- `Int` - inteiro de 32 bits
-- `Float` - tipo ponto flutuante
-- `String` - sequência de caracteres no formato `UTF-8`
-- `Boolean` - `true` ou `false`
-- `ID` - identificador único, usado normalmente para localizar dados. É possível criar tipos scalar customizados, estudaremos mais adiante.
-
-## [GraphQL] OBJECT TYPE
-Quando trabalhamos com GraphQL, o ideal é pensarmos no uso dos dados, mais do que na forma em que estão armazenados. Pensando nisso, nem sempre queremos retornar um dado concreto, mas sim um conjunto de dados com propriedades específicas — ou seja, um objeto.
-
-Um exemplo de tipo Objeto (Object type) em GraphQL:
-
-```gql
-type Livro {
-    id: ID!
-    titulo: String!
-    autoria: String!
-    paginas: Int!
-    colecoes: [Colecao!]!
-}
-```
-
-No exemplo acima, estamos definindo o **tipo Objeto** `Livro`.
-
-As propriedades que no GraphQL são chamadas de **campos** retornam **tipos scalar**, como `strings` e `inteiros`, e também podem retornar arrays compostas de outros objetos, como no caso de colecoes: `[Colecao!]!`.
-
-> Note que na definição do objeto não está especificado de qual base de dados virão esses dados, apenas quais dados o GraphQL espera receber, e de que tipos.
-
-Os campos marcados com exclamação `!` são campos que não podem ser nulos. Ou seja, qualquer query que envolva estes campos sempre devem ter algum valor do tipo esperado. No caso de colecoes: `[Colecao!]!` a exclamação após o fechamento da array significa que o campo colecoes sempre vai receber uma array (tendo ou não elementos dentro dela); a exclamação em `Colecao!` significa que qualquer elemento dentro da array sempre vai ser um objeto `Colecao`.
-
-## [GraphQL] QUERY TYPE
-
-Os **tipos Query** definem os pontos de entrada (entry points) da API; indicam quais dados o cliente pode receber e de que forma, de certa forma, são como queries do tipo `GET` quando trabalhamos com REST, a diferença aqui é que o cliente tem mais liberdade para montar as queries para receber apenas os dados que precisa lembrando que, para o GraphQL e também para o cliente, não importa a origem desses dados. os dados podem vir de diversas fontes: endpoints REST, bancos SQL e NoSQL, outro servidor GraphQL.
-
-Um exemplo de tipo Query:
-
-```gql
-type Query {
-    livros: [Livro!]!
-    livro(id: ID!): Livro!
-}
-```
-
-Aqui definimos a query `livros`, que retorna uma array composta por **tipos objeto** `Livro`, e a **query** `livro`, que recebe um número de `ID` por parâmetro e retorna um **objeto** `Livro` referente ao `ID` informado.
-
-Uma vez que as queries são os pontos de entrada de uma API GraphQL, toda aplicação vai ter pelo menos uma Query em seu schema.
-
-## [GraphQL] MUTATION TYPE
-
-**Mutations** são os tipos GraphQL utilizados para adicionar, alterar e deletar dados, de forma similar às operações de `POST`, `PUT` e `DELETE` nos CRUDs desenvolvidos em REST.
-
-Os **tipos Query** são obrigatórios em qualquer serviço GraphQL, porém Mutations são opcionais. Um exemplo de tipo Mutation para adicionar um novo livro:
-
-```gql
-type Mutation {
-    adicionaLivro(titulo: String!, autoria: String!, paginas: Int!, colecoes: Colecao!): Livro!
-}
-```
-
-Neste exemplo, temos somente uma **Mutation**, que chamamos de `adicionaLivro` e recebe por parâmetro os dados necessários. Confira os parâmetros com o tipo `Livro` definido anteriormente!
-
-Além dos tipos acima, o GraphQL ainda tem mais tipos básicos:
-
-- Enum,
-- Input,
-- Interface,
-- Union.
