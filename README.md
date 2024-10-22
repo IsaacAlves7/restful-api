@@ -122,7 +122,7 @@ Além dos tipos acima, o GraphQL ainda tem mais tipos básicos:
 - Interface,
 - Union.
 
-# [GraphQL] Utilizando linguagens de programação
+## [GraphQL] Utilizando linguagens de programação
 É importante trabalharmos com essa linguagem SDL, essa linguagem específica do Graphql, porque como o Graphql trabalha com várias linguagens de backend, como por exemplo Python, Node, JavaScript, usar essa linguagem dele garante uma padronização nos esquemas, por isso escrevemos os schemas usando essa linguagem própria do Graphql.
 
 Então, como falamos anteriormente, o GraphQL tem sua própria linguagem, chamada de SDL, ou Schema Definition Language, linguagem de definição de schema. Isso porque é possível implementar o GraphQL em conjunto com qualquer outra linguagem, então a SDL serve para fazer essa integração de forma agnóstica.
@@ -286,5 +286,29 @@ const server = new ApolloServer({ typeDefs, resolvers })
 ```
 
 Vai ser igual `gql` e vou abrir duas crases, as mesmas crases que usamos para criar templates strings no JavaScript, e entre essas crases vou passar meu `type User`. Agora acabamos de criar nosso primeiro tipo e nossa const `typeDefs` está aguardando o esquema de Graphql que vamos usar nesse nosso servidor que vamos subir daqui a pouco.
+
+</details>
+
+<details><summary><b title="(click to open)">.NET</b></summary><br />
+
+</details>
+
+<details><summary><b title="(click to open)">Python</b></summary><br />
+
+</details>
+
+<details><summary><b title="(click to open)">Java</b></summary><br />
+
+</details>
+
+<details><summary><b title="(click to open)">PHP</b></summary><br />
+
+</details>
+
+<details><summary><b title="(click to open)">Go</b></summary><br />
+
+</details>
+
+<details><summary><b title="(click to open)">Ruby</b></summary><br />
 
 </details>
