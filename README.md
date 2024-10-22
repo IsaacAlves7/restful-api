@@ -324,4 +324,6 @@ Os princípios básicos da Federação GraphQL:
 
 - Separação de Preocupações: Cada serviço federado pode ser desenvolvido, implantado e mantido independentemente, o que permite que as equipes trabalhem de forma autônoma e se concentrem em seus domínios específicos. 
 
-- Extensões de Esquema: A Federação permite a extensão de tipos e campos entre serviços, permitindo a junção de dados perfeita e a resolução de dados relacionados de diferentes serviços. Planejamento de Consulta: Quando uma consulta é recebida, o gateway gera um plano de consulta, determinando o ideal
+- Extensões de Esquema: A Federação permite a extensão de tipos e campos entre serviços, permitindo a junção de dados perfeita e a resolução de dados relacionados de diferentes serviços.
+  
+- Planejamento de Consulta: Quando uma consulta é recebida, o gateway gera um plano de consulta, determinando o ideal.
