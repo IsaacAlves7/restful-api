@@ -122,7 +122,7 @@ Além dos tipos acima, o GraphQL ainda tem mais tipos básicos:
 - Interface,
 - Union.
 
-## [GraphQL] Utilizando linguagens de programação
+## [GraphQL] SDL - Schema Definition Language
 É importante trabalharmos com essa linguagem SDL, essa linguagem específica do Graphql, porque como o Graphql trabalha com várias linguagens de backend, como por exemplo Python, Node, JavaScript, usar essa linguagem dele garante uma padronização nos esquemas, por isso escrevemos os schemas usando essa linguagem própria do Graphql.
 
 Então, como falamos anteriormente, o GraphQL tem sua própria linguagem, chamada de SDL, ou Schema Definition Language, linguagem de definição de schema. Isso porque é possível implementar o GraphQL em conjunto com qualquer outra linguagem, então a SDL serve para fazer essa integração de forma agnóstica.
