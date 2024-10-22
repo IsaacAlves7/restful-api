@@ -127,7 +127,7 @@ Além dos tipos acima, o GraphQL ainda tem mais tipos básicos:
 ## [GraphQL] SDL - Schema Definition Language
 É importante trabalharmos com essa linguagem SDL, essa linguagem específica do Graphql, porque como o Graphql trabalha com várias linguagens de backend, como por exemplo Python, Node, JavaScript, usar essa linguagem dele garante uma padronização nos esquemas, por isso escrevemos os schemas usando essa linguagem própria do Graphql.
 
-Então, como falamos anteriormente, o GraphQL tem sua própria linguagem, chamada de SDL, ou Schema Definition Language, linguagem de definição de schema. Isso porque é possível implementar o GraphQL em conjunto com qualquer outra linguagem, então a SDL serve para fazer essa integração de forma agnóstica.
+Então, como falamos anteriormente, o GraphQL tem sua própria linguagem, chamada de **SDL - Schema Definition Language**, linguagem de definição de schema. Isso porque é possível implementar o GraphQL em conjunto com qualquer outra linguagem, então a SDL serve para fazer essa integração de forma agnóstica.
 
 Acabamos de criar nosso primeiro tipo, ainda vamos criar vários tipos, vamos falar bastante deles, então vamos em frente continuando para subirmos nosso primeiro servidor Graphql com Apollo. Para entender como essa linguagem funciona, sempre temos que ter em mente que o GraphQL trabalha com tipos, e saber quais tipos são esses.
 
@@ -315,5 +315,13 @@ Vai ser igual `gql` e vou abrir duas crases, as mesmas crases que usamos para cr
 
 </details>
 
-## [Graphql] GraphQL Federation
-GraphQL Federation é um modelo de arquitetura que permite que vários serviços GraphQL, conhecidos como subgráficos ou serviços federados, sejam combinados em um único esquema ou API. Este gráfico de dados unificado permite que os clientes consultem e recebam respostas de vários serviços usando uma única solicitação. A Apollo, uma empresa proeminente no ecossistema GraphQL, foi pioneira neste conceito para facilitar a integração perfeita de vários microsserviços e fontes de dados.
+## [GraphQL] GraphQL Federation
+**GraphQL Federation** é um modelo de arquitetura que permite que vários serviços GraphQL, conhecidos como subgráficos ou serviços federados, sejam combinados em um único esquema ou API. Este gráfico de dados unificado permite que os clientes consultem e recebam respostas de vários serviços usando uma única solicitação. A Apollo, uma empresa proeminente no ecossistema GraphQL, foi pioneira neste conceito para facilitar a integração perfeita de vários microsserviços e fontes de dados.
+
+Os princípios básicos da Federação GraphQL: 
+
+- A Federação GraphQL permite a composição de vários serviços GraphQL implantados independentemente em um único esquema. Esse processo é facilitado pelo **Federation Gateway**, um servidor que se comunica com cada serviço federado, combina seus respectivos esquemas e resolve consultas recebidas. 
+
+- Separação de Preocupações: Cada serviço federado pode ser desenvolvido, implantado e mantido independentemente, o que permite que as equipes trabalhem de forma autônoma e se concentrem em seus domínios específicos. 
+
+- Extensões de Esquema: A Federação permite a extensão de tipos e campos entre serviços, permitindo a junção de dados perfeita e a resolução de dados relacionados de diferentes serviços. Planejamento de Consulta: Quando uma consulta é recebida, o gateway gera um plano de consulta, determinando o ideal
