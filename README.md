@@ -13,6 +13,8 @@ Vamos supor que numa `feature` qualquer desse sistema de escola de cliente, o la
 
 Ele quer fazer uma query que pegue de `users` somente o nome, e do `role` desse user, do papel desse usuário, somente a string de tipo, ele não quer receber mais nada, somente isso.
 
+> É interessante trabalhar com autenticação e autorização de usuários usando esquemas do GraphQL.
+
 A partir dessa query que o cliente consegue fazer em Graphql ele recebe um JSON somente com o que ele quer no formato agregado de uma forma que para o cliente faz mais sentido, são dados mais concisos e somente com o que o cliente pediu.
 
 O Graphql com isso procura resolver um problema em rest, uma questão do rest que costumamos chamar de **overfitting**, que seria **super requisição**, e também o **underfitting**, que é **sub requisição**. É quando o endpoint ou traz muitos dados que não precisamos numa requisição ou o contrário, precisamos de mais de uma requisição para ter os dados que precisamos. Então, o Graphql vem aí para resolver essa questão e fazer com que nosso cliente peça, em uma requisição só ele receba somente o que ele quer e mais nada. Podemos dizer que o Graphql é uma tecnologia voltada para front? Podemos, porque a ideia é melhorar, otimizar essa relação dos clientes com os dados que ele recebe do back, que é uma tecnologia focada no front, mas claro que vamos desenvolver nosso servidor Graphql no back.
