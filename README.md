@@ -314,3 +314,6 @@ Vai ser igual `gql` e vou abrir duas crases, as mesmas crases que usamos para cr
 <details><summary><b title="(click to open)">Ruby</b></summary><br />
 
 </details>
+
+## [Graphql] GraphQL Federation
+GraphQL Federation é um modelo de arquitetura que permite que vários serviços GraphQL, conhecidos como subgráficos ou serviços federados, sejam combinados em um único esquema ou API. Este gráfico de dados unificado permite que os clientes consultem e recebam respostas de vários serviços usando uma única solicitação. A Apollo, uma empresa proeminente no ecossistema GraphQL, foi pioneira neste conceito para facilitar a integração perfeita de vários microsserviços e fontes de dados.
