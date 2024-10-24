@@ -88,9 +88,9 @@ Os campos marcados com exclamação `!` são campos que não podem ser nulos. Ou
 
 ## [GraphQL] Schema & Query type
 
-Os **tipos Query** definem os pontos de entrada (entry points) da API; indicam quais dados o cliente pode receber e de que forma, de certa forma, são como queries do tipo `GET` quando trabalhamos com REST, a diferença aqui é que o cliente tem mais liberdade para montar as queries para receber apenas os dados que precisa lembrando que, para o GraphQL e também para o cliente, não importa a origem desses dados. os dados podem vir de diversas fontes: endpoints REST, bancos SQL e NoSQL, outro servidor GraphQL.
+Os tipos **Query** (consulta) definem os pontos de entrada (entry points) da API; indicam quais dados o cliente pode receber e de que forma, de certa forma, são como requests do tipo `GET` quando trabalhamos com REST, a diferença aqui é que o cliente tem mais liberdade para montar as queries para receber apenas os dados que precisa lembrando que, para o GraphQL e também para o cliente, não importa a origem desses dados. os dados podem vir de diversas fontes: endpoints REST, bancos SQL e NoSQL, outro servidor GraphQL.
 
-Um exemplo de tipo Query:
+Sintaxe: Um exemplo de tipo Query
 
 ```gql
 type Query {
@@ -102,6 +102,24 @@ type Query {
 Aqui definimos a query `livros`, que retorna uma array composta por **tipos objeto** `Livro`, e a **query** `livro`, que recebe um número de `ID` por parâmetro e retorna um **objeto** `Livro` referente ao `ID` informado.
 
 Uma vez que as queries são os pontos de entrada de uma API GraphQL, toda aplicação vai ter pelo menos uma Query em seu schema.
+
+Para fazer uma requisição de consulta para uma API do GraphQL, nós não utilizamos o método `GET`, mas sim `POST`.
+
+Exemplo:
+
+```http
+POST:
+query {
+  card(id: [ID]) {
+    title
+    done
+    id
+    updated_at
+  }
+}
+
+Host: https://api.pipefy.com/graphql
+```
 
 ## [GraphQL] Mutation type
 
