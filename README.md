@@ -113,6 +113,43 @@ POST: query {card(id: [ID]) { title done id updated_at }}
 Host: https://api.pipefy.com/graphql
 ```
 
+Em uma API GraphQL, o **payload** refere-se ao conjunto de dados que é enviado ou recebido durante uma requisição. Esse payload contém a estrutura exata da consulta (query) ou mutação (`mutation`) que o cliente deseja realizar, incluindo os campos e filtros específicos que o cliente solicitou ou deseja modificar. O payload em GraphQL é flexível e adaptável, permitindo que o cliente solicite ou envie exatamente os dados necessários, o que reduz o tráfego e otimiza a comunicação entre o cliente e o servidor.
+
+No contexto do GraphQL, o payload inclui:
+
+1. **Query ou Mutation**: A definição da operação que o cliente quer executar. Isso especifica o que deve ser lido (query) ou modificado (mutation).
+2. **Campos e Argumentos**: Campos específicos que o cliente deseja acessar ou atualizar. Isso permite a personalização da resposta para incluir apenas os dados necessários.
+3. **Variáveis (opcional)**: Valores dinâmicos que podem ser utilizados na query ou mutação, facilitando a reutilização de queries com diferentes parâmetros.
+4. **Resposta (Response Payload)**: Os dados que a API GraphQL devolve como resposta, que é estruturada exatamente de acordo com os campos especificados na requisição.
+
+Aqui está um exemplo de payload de uma **requisição** GraphQL:
+
+```graphql
+query {
+  user(id: "123") {
+    id
+    name
+    email
+  }
+}
+```
+
+Neste caso, o payload enviado para a API inclui uma query que solicita informações do usuário com `id = 123`, com campos específicos (`id`, `name`, `email`).
+
+O payload de **resposta** será estruturado com os dados solicitados:
+
+```json
+{
+  "data": {
+    "user": {
+      "id": "123",
+      "name": "Alice",
+      "email": "alice@example.com"
+    }
+  }
+}
+```
+
 ## [GraphQL] Mutation type
 
 **Mutations** são os tipos GraphQL utilizados para adicionar, alterar e deletar dados, de forma similar às operações de `POST`, `PUT` e `DELETE` nos CRUDs desenvolvidos em REST.
