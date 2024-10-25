@@ -346,3 +346,9 @@ Os princípios básicos da Federação GraphQL:
 - Extensões de Esquema: A Federação permite a extensão de tipos e campos entre serviços, permitindo a junção de dados perfeita e a resolução de dados relacionados de diferentes serviços.
   
 - Planejamento de Consulta: Quando uma consulta é recebida, o gateway gera um plano de consulta, determinando o ideal.
+
+<img src="https://github.com/user-attachments/assets/ac25eac7-91c8-4d8c-9e47-3f338b0399c9" height="277" align="left">
+
+Usar APIs REST diretamente de seus aplicativos da web, móveis e wearables geralmente resulta em baixo desempenho. No entanto, para desenvolvedores de aplicativos, existe um problema maior: encontrar as APIs REST certas, costurá-las manualmente em cada aplicativo e gerenciar novas versões de API REST que geralmente incluem alterações significativas. A implementação cuidadosa e a coordenação necessárias para evitar alterações significativas na API REST podem ser um grande desperdício de tempo para todas as equipes — tempo que não é gasto na entrega de novas experiências de aplicativo. 
+
+O GraphQL é uma camada sobre seus microsserviços e APIs REST existentes que facilita para os desenvolvedores de aplicativos encontrar os dados de que precisam e criar uma única consulta GraphQL rápida. O GraphQL fornece uma fachada que desacopla as equipes de front-end e back-end para que as APIs REST subjacentes possam ser refatoradas mais facilmente. Uma consulta GraphQL pode recuperar os dados exatos necessários para alimentar uma nova experiência de aplicativo, como listar todos os produtos que um cliente comprou e a data em que os comprou:
