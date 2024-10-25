@@ -347,7 +347,7 @@ Os princípios básicos da Federação GraphQL:
   
 - Planejamento de Consulta: Quando uma consulta é recebida, o gateway gera um plano de consulta, determinando o ideal.
 
-<img src="https://github.com/user-attachments/assets/ac25eac7-91c8-4d8c-9e47-3f338b0399c9" height="277" align="left">
+<div align="center"><img src="https://github.com/user-attachments/assets/ac25eac7-91c8-4d8c-9e47-3f338b0399c9" height="277"></div>
 
 Usar APIs REST diretamente de seus aplicativos da web, móveis e wearables geralmente resulta em baixo desempenho. No entanto, para desenvolvedores de aplicativos, existe um problema maior: encontrar as APIs REST certas, costurá-las manualmente em cada aplicativo e gerenciar novas versões de API REST que geralmente incluem alterações significativas. A implementação cuidadosa e a coordenação necessárias para evitar alterações significativas na API REST podem ser um grande desperdício de tempo para todas as equipes — tempo que não é gasto na entrega de novas experiências de aplicativo. 
 
