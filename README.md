@@ -162,6 +162,18 @@ Aqui estão os principais motivos para essa prática:
 
 Por isso, ao usar GraphQL, os clientes devem sempre verificar o campo `"errors"` para garantir que a resposta é realmente completa e sem problemas.
 
+Outro padrão do GraphQL, é uma resposta com valores nulos pode tanto indicar sucesso parcial quanto um problema em partes da consulta. Isso depende do contexto dos dados e da presença de um campo de erro.
+
+Aqui estão as principais razões e cenários para esse comportamento:
+
+1. **Sucesso Parcial**: Se uma consulta GraphQL busca múltiplos campos ou tipos de dados, e apenas alguns desses campos não puderem ser resolvidos (por exemplo, por causa de uma falha específica no servidor ou por permissões insuficientes), os campos com erro aparecerão como `null` na resposta. Isso permite que o restante dos dados ainda seja retornado e aproveitado.
+
+2. **Erro Detalhado no Campo `"errors"`**: Mesmo com campos retornando `null`, se a execução da consulta encontrou problemas, eles serão detalhados no campo `"errors"`. Essa estrutura permite que o cliente identifique especificamente o que falhou, sem que a consulta inteira seja considerada um erro total.
+
+3. **Sem Dados Encontrados**: Em alguns casos, um campo `null` pode simplesmente indicar que não há dados correspondentes sem necessariamente representar um erro. Por exemplo, um campo de relacionamento que não possui um registro correspondente ou um dado opcional que não foi preenchido.
+
+Assim, no GraphQL, uma resposta com valores nulos não necessariamente significa erro. É crucial que os clientes analisem o campo `"errors"` e interpretem `null` de acordo com o contexto da consulta e da aplicação.
+
 ## [GraphQL] Mutation type
 
 **Mutations** são os tipos GraphQL utilizados para adicionar, alterar e deletar dados, de forma similar às operações de `POST`, `PUT` e `DELETE` nos CRUDs desenvolvidos em REST.
