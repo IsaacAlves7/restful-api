@@ -150,6 +150,18 @@ O payload de **resposta** será estruturado com os dados solicitados:
 }
 ```
 
+O GraphQL usa o código de status HTTP `200 OK` por padrão, mesmo para respostas que incluem erros, pois a estrutura de resposta foi projetada para ser autossuficiente ao incluir um campo específico para erros. Isso ocorre porque, em uma consulta GraphQL, é possível que algumas partes da consulta sejam bem-sucedidas enquanto outras falham.
+
+Aqui estão os principais motivos para essa prática:
+
+1. **Estrutura de Resposta Unificada**: A resposta de uma consulta GraphQL é sempre retornada em um formato JSON padronizado, com um campo `"data"` para os dados solicitados e, se houver erros, um campo `"errors"` descrevendo-os. Isso permite ao cliente diferenciar entre dados bem-sucedidos e falhas dentro de uma mesma resposta.
+
+2. **Suporte a Consultas Parciais**: Em uma única chamada, é possível solicitar dados de várias fontes. Se uma parte da consulta falha, o GraphQL ainda tenta retornar os dados disponíveis, junto com informações sobre o erro.
+
+3. **Abstração de Erros de Transporte**: O foco do GraphQL está na estrutura e integridade dos dados, não no transporte (HTTP). A decisão de usar `200 OK` evita o uso do código HTTP para indicar a presença de erros, permitindo que o cliente trate os erros com base no conteúdo do JSON.
+
+Por isso, ao usar GraphQL, os clientes devem sempre verificar o campo `"errors"` para garantir que a resposta é realmente completa e sem problemas.
+
 ## [GraphQL] Mutation type
 
 **Mutations** são os tipos GraphQL utilizados para adicionar, alterar e deletar dados, de forma similar às operações de `POST`, `PUT` e `DELETE` nos CRUDs desenvolvidos em REST.
