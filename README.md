@@ -150,7 +150,7 @@ O payload de **resposta** será estruturado com os dados solicitados:
 }
 ```
 
-O GraphQL usa o código de status HTTP `200 OK` por padrão, mesmo para respostas que incluem erros, pois a estrutura de resposta foi projetada para ser autossuficiente ao incluir um campo específico para erros. Isso ocorre porque, em uma consulta GraphQL, é possível que algumas partes da consulta sejam bem-sucedidas enquanto outras falham.
+O GraphQL usa o código de status HTTP `200 OK` por padrão, mesmo para respostas que incluem erros, pois a estrutura de resposta foi projetada para ser autossuficiente ao incluir um campo específico para erros. Isso ocorre porque, em uma consulta GraphQL, é possível que algumas partes da consulta sejam bem-sucedidas enquanto outras falham. Em GraphQL, mesmo que a resposta retorne com um código HTTP `200` OK, os erros são reportados no campo `errors` do payload de resposta. Isso significa que uma resposta com erros pode coexistir com dados válidos, possibilitando que partes da consulta sejam bem-sucedidas enquanto outras falham.
 
 Aqui estão os principais motivos para essa prática:
 
