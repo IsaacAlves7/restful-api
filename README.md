@@ -396,6 +396,8 @@ Vai ser igual `gql` e vou abrir duas crases, as mesmas crases que usamos para cr
 </details>
 
 ## [GraphQL] Apollo GraphQL Federation
+<img src="https://www.vectorlogo.zone/logos/apollographql/apollographql-icon.svg" align="right" height="77">
+
 **Apollo GraphQL Federation** é um modelo de arquitetura que permite que vários serviços GraphQL, conhecidos como subgráficos ou serviços federados (subgraphs), sejam combinados em um único esquema ou API. Este gráfico de dados unificado permite que os clientes consultem e recebam respostas de vários serviços usando uma única solicitação. A Apollo, uma empresa proeminente no ecossistema GraphQL, foi pioneira neste conceito para facilitar a integração perfeita de vários microsserviços e fontes de dados. Apollo Federation é independente da linguagem de programação. A arquitetura do Apollo Federation foi projetada para possibilitar a composição de múltiplos serviços GraphQL (subgraphs) em uma única "supergraph" unificada, independentemente da linguagem de cada serviço individual. Embora o Apollo Server seja uma implementação popular em JavaScript/TypeScript para serviços federados, você pode implementar subgraphs em qualquer linguagem, desde que eles sigam as especificações GraphQL e estejam em conformidade com os contratos do Apollo Federation.
 
 Os princípios básicos da Federação GraphQL: 
