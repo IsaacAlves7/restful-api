@@ -11,7 +11,7 @@ Por exemplo, se usássemos um banco de tabelas para criar um `usuário`, por exe
 
 Vamos supor que numa `feature` qualquer desse sistema de escola de cliente, o lado cliente precisa receber somente o nome do usuários da tabela `users` e da tabela `roles` ele só precisa receber uma `string` com o tipo de `role`, `professor`, `aluno`, etc. Ele não precisa receber mais nada.
 
-Ele quer fazer uma query que pegue de `users` somente o nome, e do `role` desse user, do papel desse usuário, somente a string de tipo, ele não quer receber mais nada, somente isso.
+Ele quer fazer uma query que pegue de `users` somente o nome, e do `role` desse `user`, do papel desse usuário, somente a `string` de tipo, ele não quer receber mais nada, somente isso.
 
 > É interessante trabalhar com autenticação e autorização de usuários usando esquemas do GraphQL.
 
