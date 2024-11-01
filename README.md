@@ -373,6 +373,26 @@ Vai ser igual `gql` e vou abrir duas crases, as mesmas crases que usamos para cr
 
 <details><summary><b title="(click to open)">.NET</b></summary><br />
 
+```csharp
+ // Query da mutation para atualizar o card no Pipefy - anonymous type
+ var updateCardConsult = new
+ {
+     query = $@"
+         mutation {{
+             up_1: updateCardField(input: {{ card_id: ""{cardId}"", field_id: ""chassi"", new_value: ""{chassi}"" }}) {{ card {{ id }} }},
+             up_2: updateCardField(input: {{ card_id: ""{cardId}"", field_id: ""renavam"", new_value: ""{renavam}"" }}) {{ card {{ id }} }},
+             up_3: updateCardField(input: {{ card_id: ""{cardId}"", field_id: ""n_mero_do_motor"", new_value: ""{motor}"" }}) {{ card {{ id }} }},
+             up_4: updateCardField(input: {{ card_id: ""{cardId}"", field_id: ""marca"", new_value: ""{marca}"" }}) {{ card {{ id }} }},
+             up_5: updateCardField(input: {{ card_id: ""{cardId}"", field_id: ""modelo_1"", new_value: ""{modelo}"" }}) {{ card {{ id }} }},
+             up_6: updateCardField(input: {{ card_id: ""{cardId}"", field_id: ""cor"", new_value: ""{cor}"" }}) {{ card {{ id }} }},
+             up_7: updateCardField(input: {{ card_id: ""{cardId}"", field_id: ""combust_vel"", new_value: ""{combustivel}"" }}) {{ card {{ id }} }},
+             up_8: updateCardField(input: {{ card_id: ""{cardId}"", field_id: ""ano_fabrica_o"", new_value: ""{veianofabr}"" }}) {{ card {{ id }} }},
+             up_9: updateCardField(input: {{ card_id: ""{cardId}"", field_id: ""ano_modelo"", new_value: ""{veianomodelo}"" }}) {{ card {{ id }} }},
+             up_10: updateCardField(input: {{ card_id: ""{cardId}"", field_id: ""tarjeta_do_munic_pio"", new_value: ""{municipio}"" }}) {{ card {{ id }} }}
+         }}"
+ };
+```
+
 </details>
 
 <details><summary><b title="(click to open)">Python</b></summary><br />
