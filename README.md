@@ -9,9 +9,7 @@ O Graphql também normalmente utilizamos o protocolo HTTP para fazer a comunica�
 
 Por exemplo, se usássemos um banco de tabelas para criar um `usuário`, por exemplo, um usuário de uma escola de inglês, esses usuários têm `nome`, `e-mail`, se eles estão ativos no sistema ou não, e eles podem ser professores, podem ser alunos, podem ser coordenação. Se pensarmos, por exemplo, numa tabela SQL, conseguimos montar um usuário completo a partir de duas tabelas, uma com os dados principais, `nome`, `e-mail`, etc, e outra para definir os possíveis roles, os possíveis papeis desse usuário no sistema. Então você teria uma tabela de `roles` (funções de trabalho) que tem `professor`, `aluno`, `coordenação`, e por aí vai. Com o Graphql pensamos em como esses dados seriam usados pelo lado cliente e o cliente pode montar as queries a partir dessa premissa.
 
-Vamos supor que numa `feature` qualquer desse sistema de escola de cliente, o lado cliente precisa receber somente o nome do usuários da tabela `users` e da tabela `roles` ele só precisa receber uma `string` com o tipo de `role`, `professor`, `aluno`, etc. Ele não precisa receber mais nada.
-
-Ele quer fazer uma query que pegue de `users` somente o nome, e do `role` desse `user`, do papel desse usuário, somente a `string` de tipo, ele não quer receber mais nada, somente isso.
+Vamos supor que numa `feature` qualquer desse sistema de escola de cliente, o lado cliente precisa receber somente o nome do usuários da tabela `users` e da tabela `roles` ele só precisa receber uma `string` com o tipo de `role`, `professor`, `aluno`, etc. Ele não precisa receber mais nada. Ele quer fazer uma query que pegue de `users` somente o nome, e do `role` desse `user`, do papel desse usuário, somente a `string` de tipo, ele não quer receber mais nada, somente isso.
 
 > É interessante trabalhar com autenticação e autorização de usuários usando esquemas do GraphQL.
 
