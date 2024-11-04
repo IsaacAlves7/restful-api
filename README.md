@@ -187,10 +187,10 @@ Neste exemplo, temos somente uma Mutation, que chamamos de `adicionaLivro` e rec
 
 Além dos tipos acima, o GraphQL ainda tem mais tipos básicos:
 
-- Enum,
-- Input,
-- Interface,
-- Union.
+- <a href="">`Enum`</a>,
+- <a href="">`Input`</a>,
+- <a href="">`Interface`</a>,
+- <a href="">`Union`</a>.
 
 ```json
  "Pipefy": {
