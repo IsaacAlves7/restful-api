@@ -173,10 +173,9 @@ Aqui estão as principais razões e cenários para esse comportamento:
 Assim, no GraphQL, uma resposta com valores nulos não necessariamente significa erro. É crucial que os clientes analisem o campo `"errors"` e interpretem `null` de acordo com o contexto da consulta e da aplicação.
 
 ## [GraphQL] Mutation type
+As **Mutations** (mutações) são os tipos GraphQL utilizados para adicionar, alterar e deletar dados, de forma similar às operações de `POST`, `PUT` e `DELETE` nos CRUDs (Create Read Update Delete) desenvolvidos em REST API. Os tipos <a href="">Query</a> são obrigatórios em qualquer serviço GraphQL, porém Mutations são opcionais. 
 
-**Mutations** são os tipos GraphQL utilizados para adicionar, alterar e deletar dados, de forma similar às operações de `POST`, `PUT` e `DELETE` nos CRUDs desenvolvidos em REST.
-
-Os tipos <a href="">Query</a> são obrigatórios em qualquer serviço GraphQL, porém Mutations são opcionais. Um exemplo de tipo Mutation para adicionar um novo livro:
+Exemplo: tipo Mutation para adicionar um novo `Livro`
 
 ```gql
 type Mutation {
@@ -184,7 +183,7 @@ type Mutation {
 }
 ```
 
-Neste exemplo, temos somente uma **Mutation**, que chamamos de `adicionaLivro` e recebe por parâmetro os dados necessários. Confira os parâmetros com o tipo `Livro` definido anteriormente!
+Neste exemplo, temos somente uma Mutation, que chamamos de `adicionaLivro` e recebe por parâmetro os dados necessários. Confira os parâmetros com o tipo `Livro` definido anteriormente!
 
 Além dos tipos acima, o GraphQL ainda tem mais tipos básicos:
 
@@ -200,6 +199,12 @@ Além dos tipos acima, o GraphQL ainda tem mais tipos básicos:
    "Authorization": "Bearer [Token]",
    "Query": "mutation {                            \nchassi: updateCardField(input: {card_id: {cardId}, field_id: \"chassi\", new_value: \"{chassi}\"}) { success }\nrenavam: updateCardField(input: {card_id: {cardId}, field_id: \"renavam\", new_value: \"{renavam}\"}) { success }\nmotor: updateCardField(input: {card_id: {cardId}, field_id: \"n_mero_do_motor\", new_value: \"{motor}\"})  { success }\nmarca: updateCardField(input: {card_id: {cardId}, field_id: \"marca\", new_value: \"{marca\"}) { success }\nmodelo: updateCardField(input: {card_id: {cardId}, field_id: \"modelo\", new_value: \"{modelo}\"}) { success }\ncor: updateCardField(input: {card_id: {cardId}, field_id: \"cor\", new_value: \"{cor}\"}) { success }\ncombustivel: updateCardField(input: {card_id: {cardId}, field_id: \"combustivel\", new_value: \"{combustivel}\"}) { success }\nveianofabr: updateCardField(input: {card_id: {cardId}, field_id: \"veianofabr\", new_value: \"{veianofabr}\"}) { success }\nveianomodelo: updateCardField(input: {card_id: {cardId}, field_id: \"veianomodelo\", new_value: \"{anodemodelo}\"}) { success }\nmunicipio: updateCardField(input: {card_id: {cardId}, field_id: \"municipio\", new_value: \"{municipio}\"}) { success }\nuf: updateCardField(input: {card_id: {cardId}, field_id: \"uf\", new_value: \"{uf}\"}) { success }\n}}"
  }
+```
+
+Exemplo, mutation para criar cards no Pipefy:
+
+```gql
+
 ```
 
 ## [GraphQL] SDL - Schema Definition Language
