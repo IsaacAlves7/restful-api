@@ -25,7 +25,7 @@ Fica mais ágil porque o front não fica dependendo tanto do back para criar um 
 
 Vamos testar na prática com alguns testes envolvendo a API GraphQL: Você pode usar o Postman ou <a href="https://app.pipefy.com/graphiql">GraphiQL</a>
 
-Consultar o card do Pipefy:
+Exemplo: Consultar o card do Pipefy
 
 ```gpl
 query {
