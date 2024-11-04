@@ -43,6 +43,10 @@ query {
       native_value
       report_value
       updated_at
+      field {
+       label
+       id
+      }
       value
     }
     updated_at
