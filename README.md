@@ -68,7 +68,7 @@ São tipos que refletem alguns dos tipos de dados que já conhecemos. Para o Gra
 ## [GraphQL] Object type
 Quando trabalhamos com GraphQL, o ideal é pensarmos no uso dos dados, mais do que na forma em que estão armazenados. Pensando nisso, nem sempre queremos retornar um dado concreto, mas sim um conjunto de dados com propriedades específicas — ou seja, um objeto.
 
-Um exemplo de tipo Objeto (Object type) em GraphQL:
+Exemplo: tipo Objeto (Object type) em GraphQL
 
 ```gql
 type Livro {
