@@ -433,3 +433,19 @@ Os princípios básicos da Federação GraphQL:
 Usar APIs REST diretamente de seus aplicativos da web, móveis e wearables geralmente resulta em baixo desempenho. No entanto, para desenvolvedores de aplicativos, existe um problema maior: encontrar as APIs REST certas, costurá-las manualmente em cada aplicativo e gerenciar novas versões de API REST que geralmente incluem alterações significativas. A implementação cuidadosa e a coordenação necessárias para evitar alterações significativas na API REST podem ser um grande desperdício de tempo para todas as equipes — tempo que não é gasto na entrega de novas experiências de aplicativo. 
 
 O GraphQL é uma camada sobre seus microsserviços e APIs REST existentes que facilita para os desenvolvedores de aplicativos encontrar os dados de que precisam e criar uma única consulta GraphQL rápida. O GraphQL fornece uma fachada que desacopla as equipes de front-end e back-end para que as APIs REST subjacentes possam ser refatoradas mais facilmente. Uma consulta GraphQL pode recuperar os dados exatos necessários para alimentar uma nova experiência de aplicativo, como listar todos os produtos que um cliente comprou e a data em que os comprou:
+
+Portanto, o Apollo GraphQL Federation segue o padrão de microsserviços funcionando de forma muito semelhante a um API Gateway, mas com algumas características específicas para GraphQL. Com o Apollo Federation, você pode definir vários microsserviços, conhecidos como **subgraph services**, cada um responsável por um conjunto específico de dados ou funcionalidades. A Apollo Gateway atua como um ponto único de entrada, unificando e orquestrando as consultas entre esses serviços.
+
+Aqui estão algumas maneiras pelas quais Apollo Federation se alinha ao padrão de microsserviços com API Gateway:
+
+1. **Ponto de Entrada Único**: A Apollo Gateway serve como um gateway central, fornecendo uma única endpoint GraphQL. Os clientes se conectam ao gateway, que gerencia a comunicação com os serviços subjacentes.
+
+2. **Divisão de Responsabilidades**: Com Apollo Federation, cada subgraph pode ser implementado como um microsserviço independente, onde cada um se concentra em um domínio específico. Isso facilita a independência dos times e ajuda a distribuir a responsabilidade pelo desenvolvimento e manutenção dos serviços.
+
+3. **Roteamento e Delegação**: A Apollo Gateway roteia automaticamente as consultas para os microsserviços corretos, combinando dados de múltiplos subgraphs conforme necessário. Esse roteamento inteligente permite que os serviços sejam consultados individualmente, conforme exigido por cada requisição.
+
+4. **Escalabilidade e Flexibilidade**: O Apollo Federation permite a escalabilidade horizontal, já que cada subgraph pode ser escalado independentemente. Com isso, ele segue o princípio dos microsserviços de dimensionar componentes isolados conforme necessário.
+
+5. **Gerenciamento de Esquemas e Composição**: A Apollo Gateway compõe o esquema GraphQL global com base nos esquemas individuais de cada subgraph. Esse esquema composto é atualizado dinamicamente, permitindo que os subgraphs evoluam sem impactar diretamente o gateway, desde que respeitem as definições compartilhadas.
+
+Em resumo, Apollo Federation utiliza um design orientado a microsserviços, com o Apollo Gateway desempenhando o papel de orquestrador de APIs. Isso torna a arquitetura altamente coesa com o padrão de API Gateway, mas especificamente otimizada para GraphQL, permitindo que os dados sejam compostos de forma flexível e escalável em ambientes de microsserviços.
