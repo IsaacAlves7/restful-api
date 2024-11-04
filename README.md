@@ -177,7 +177,7 @@ Aqui estão as principais razões e cenários para esse comportamento:
 Assim, no GraphQL, uma resposta com valores nulos não necessariamente significa erro. É crucial que os clientes analisem o campo `"errors"` e interpretem `null` de acordo com o contexto da consulta e da aplicação.
 
 ## [GraphQL] Mutation type
-As **Mutations** (mutações) são os tipos GraphQL utilizados para adicionar, alterar e deletar dados, de forma similar às operações de `POST`, `PUT` e `DELETE` nos CRUDs (Create Read Update Delete) desenvolvidos em REST API. Os tipos <a href="">Query</a> são obrigatórios em qualquer serviço GraphQL, porém Mutations são opcionais. 
+As **Mutations** (mutações) são os tipos GraphQL utilizados para adicionar, alterar e deletar dados, de forma similar às operações de `POST`, `PUT` e `DELETE` nos CRUDs (Create Read Update Delete) desenvolvidos em REST API. Os tipos <a href="">Query</a> são obrigatórios em qualquer serviço GraphQL, porém Mutations são opcionais. O comportamento da resposta do GraphQL é o mesmo tanto para criação quanto para atualização de uma mutation. Em ambos os casos, se a operação for bem-sucedida, o servidor GraphQL retornará um HTTP `200 OK` com um campo data que conterá os resultados ou confirmações da mutation, e não haverá campo errors.
 
 Exemplo: tipo Mutation para adicionar um novo `Livro`
 
