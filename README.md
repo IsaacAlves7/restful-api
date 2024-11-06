@@ -115,7 +115,7 @@ POST: query {card(id: [ID]) { title done id updated_at }}
 Host: https://api.pipefy.com/graphql
 ```
 
-Em uma API GraphQL, o **payload** refere-se ao conjunto de dados que é enviado ou recebido durante uma requisição. Esse payload contém a estrutura exata da consulta (query) ou mutação (`mutation`) que o cliente deseja realizar, incluindo os campos e filtros específicos que o cliente solicitou ou deseja modificar. O payload em GraphQL é flexível e adaptável, permitindo que o cliente solicite ou envie exatamente os dados necessários, o que reduz o tráfego e otimiza a comunicação entre o cliente e o servidor.
+Em uma API GraphQL, o **payload** refere-se ao conjunto de dados que é enviado ou recebido durante uma requisição. Esse payload contém a estrutura exata da consulta (query) ou <a href="">mutação</a> (`mutation`) que o cliente deseja realizar, incluindo os campos e filtros específicos que o cliente solicitou ou deseja modificar. O payload em GraphQL é flexível e adaptável, permitindo que o cliente solicite ou envie exatamente os dados necessários, o que reduz o tráfego e otimiza a comunicação entre o cliente e o servidor.
 
 No contexto do GraphQL, o payload inclui:
 
