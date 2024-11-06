@@ -109,7 +109,7 @@ Para fazer uma requisição de consulta para uma API do GraphQL, nós não utili
 
 Exemplo:
 
-```http
+```gql
 POST: query {card(id: [ID]) { title done id updated_at }}
 
 Host: https://api.pipefy.com/graphql
