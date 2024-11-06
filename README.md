@@ -218,6 +218,14 @@ Então, como falamos anteriormente, o GraphQL tem sua própria linguagem, chamad
 
 Acabamos de criar nosso primeiro tipo, ainda vamos criar vários tipos, vamos falar bastante deles, então vamos em frente continuando para subirmos nosso primeiro servidor Graphql com Apollo. Para entender como essa linguagem funciona, sempre temos que ter em mente que o GraphQL trabalha com tipos, e saber quais tipos são esses.
 
+<details><summary><b title="(click to open)">JS - JavaScript</b></summary><br />
+
+</details>
+
+<details><summary><b title="(click to open)">TS - TypeScript</b></summary><br />
+
+</details>
+
 <details><summary><b title="(click to open)">Node.js</b></summary><br />
 
 Vamos começar com `npm install graphql`, que é a implementação referência para trabalhar **GraphQL com Node**.
