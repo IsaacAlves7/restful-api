@@ -437,6 +437,8 @@ O **Apollo GraphQL Federation** é um modelo de arquitetura que permite que vár
 
 Os princípios básicos da Federação GraphQL: 
 
+<div align="center"><img src="https://github.com/user-attachments/assets/ac754cb8-adb6-4083-9db4-4f125d7b3efd"></div>
+
 - A Federação GraphQL permite a composição de vários serviços GraphQL implantados independentemente em um único esquema. Esse processo é facilitado pelo **Federation Gateway**, um servidor que se comunica com cada serviço federado, combina seus respectivos esquemas e resolve consultas recebidas. 
 
 - Separação de Preocupações: Cada serviço federado pode ser desenvolvido, implantado e mantido independentemente, o que permite que as equipes trabalhem de forma autônoma e se concentrem em seus domínios específicos. 
