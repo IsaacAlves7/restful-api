@@ -218,6 +218,61 @@ Então, como falamos anteriormente, o GraphQL tem sua própria linguagem, chamad
 
 Acabamos de criar nosso primeiro tipo, ainda vamos criar vários tipos, vamos falar bastante deles, então vamos em frente continuando para subirmos nosso primeiro servidor Graphql com Apollo. Para entender como essa linguagem funciona, sempre temos que ter em mente que o GraphQL trabalha com tipos, e saber quais tipos são esses.
 
+Existem ferramentas para trabalhar com SDL, como o Hasura e Apollo Server são ferramentas populares para trabalhar com GraphQL, mas possuem propósitos, arquiteturas e casos de uso diferentes. Aqui está uma comparação detalhada:
+
+<a href="https://www.apollographql.com/docs/apollo-server/"><img src="https://github.com/user-attachments/assets/1491f6ea-5dc0-40f5-a297-496616ac80c9" align="right" height="77"></a>
+
+**Hasura** é uma plataforma pronta para GraphQL, gera automaticamente uma API GraphQL com base em seu banco de dados relacional (ex.: PostgreSQL, MySQL, SQL Server). Tem o foco em **Backend as a Service (BaaS)** oferecendo um sistema completo para criar e gerenciar APIs sem necessidade de escrever código do servidor. Ideal para CRUD rápido, excelente para aplicações que precisam expor dados relacionais em GraphQL com rapidez.
+
+- **Configuração automática**: A API é gerada automaticamente com base na estrutura do banco de dados.
+- **Pouco ou nenhum código necessário**: Regras e permissões podem ser configuradas via interface gráfica ou YAML.
+- **Extensão por Webhooks e funções remotas**: Para lógica personalizada, permite integração com APIs REST, funções remotas ou eventos assíncronos.
+- **Integração nativa**: Conecta-se diretamente a bancos relacionais como PostgreSQL.
+- **CRUD automático**: Gera resolvers automaticamente para consultas, inserções, atualizações e exclusões com base nas tabelas.
+- **Suporte a relacionamentos**: Detecta e configura automaticamente relações entre tabelas.
+- **Alto desempenho com caching interno**: Otimizado para interagir com bancos de dados.
+- **Escalabilidade vertical e horizontal**: Pode ser escalado facilmente com clusters.
+- **Desvantagem em lógica complexa**: Pode se tornar limitado em casos que exigem lógica muito customizada ou acesso a múltiplas fontes de dados.
+- **Interface administrativa**: Inclui um painel para gerenciar banco de dados, permissões, eventos e APIs.
+- **Menos flexibilidade para personalização**: Pode exigir Webhooks ou extensões se os requisitos não forem suportados nativamente.
+- **Infraestrutura pronta**: Inclui funcionalidades como WebSockets para subscriptions e suporte a eventos nativamente.
+- CRUD rápido em GraphQL para um banco de dados relacional.
+- Aplicações com lógica backend simples.
+- Prototipagem ou MVPs.
+- Projetos com foco em tempo de entrega rápido.
+  
+**Apollo Server** é um servidor GraphQL personalizável, um framework para criar seu próprio servidor GraphQL com foco em flexibilidade e controle, ideal para construir resolvers e esquemas customizados, permitindo lógica complexa e integração com múltiplas fontes de dados e desenvolvimento sob medida que requer uma implementação explícita dos resolvers, oferecendo controle total sobre os dados e a lógica.
+
+- **Código sob medida**: Desenvolvedores definem os tipos GraphQL, resolvers e integrações com serviços externos manualmente.
+- **Flexibilidade máxima**: Pode se conectar a diversas fontes de dados (bancos de dados, APIs REST, microservices).
+- **Requer esforço manual**: Não automatiza operações CRUD; o desenvolvedor precisa implementar resolvers e definir permissões.
+- **Sem integração direta**: Não oferece conexão nativa com bancos de dados.
+- **Dependência de bibliotecas externas**: Requer o uso de bibliotecas como `Prisma`, `TypeORM`, ou APIs personalizadas para acessar dados.
+- **Flexibilidade em lógica complexa**: Escala bem para aplicações com resolvers customizados e integrações complexas.
+- **Desempenho dependente da implementação**: A performance depende de como os resolvers e a infraestrutura são configurados.
+- **Pode usar ferramentas de caching**: Integra-se bem com ferramentas como `Apollo Cache`, `Redis` e `DataLoader`.
+- **Ferramenta altamente personalizável**: Permite integração com ferramentas como Apollo Federation, Apollo Studio e esquemas distribuídos.
+- **Sem painel administrativo**: Gerenciamento deve ser feito via código e ferramentas externas.
+- **Configuração de subscriptions manual**: Requer implementação manual ou bibliotecas como `graphql-ws`.
+- Aplicações que consomem dados de múltiplas fontes.
+- Necessidade de lógica personalizada ou resolvers complexos.
+- Projetos com arquiteturas distribuídas (microservices).
+- Integração com APIs REST e fontes não relacionais.
+
+Resumo:
+
+| Característica           | **Hasura**                                   | **Apollo Server**                           |
+|--------------------------|----------------------------------------------|--------------------------------------------|
+| **Foco**                 | Backend as a Service (CRUD rápido)          | Framework para lógica GraphQL customizada  |
+| **Configuração**         | Automática                                  | Manual                                     |
+| **Banco de Dados**       | Integração direta                           | Requer bibliotecas externas               |
+| **Lógica Personalizada** | Limitada a extensões                        | Totalmente personalizável                 |
+| **Escalabilidade**       | Simples e integrada                         | Requer configuração                       |
+
+A escolha entre Hasura e Apollo Server depende do projeto. Use Hasura para rapidez e simplicidade, e Apollo Server para flexibilidade e controle total.
+
+Veja como aplicar nas seguintes linguagens de programação:
+
 <details><summary><b title="(click to open)">JS - JavaScript</b></summary><br />
 
 </details>
