@@ -269,7 +269,21 @@ Resumo:
 | **Lógica Personalizada** | Limitada a extensões                        | Totalmente personalizável                 |
 | **Escalabilidade**       | Simples e integrada                         | Requer configuração                       |
 
-A escolha entre Hasura e Apollo Server depende do projeto. Use Hasura para rapidez e simplicidade, e Apollo Server para flexibilidade e controle total.
+A escolha entre Hasura e Apollo Server depende do projeto. Use Hasura para rapidez e simplicidade, e Apollo Server para flexibilidade e controle total. Existem outras ferramentas além de Hasura e Apollo Server que suportam o uso do SDL para trabalhar com GraphQL. O SDL (Schema Definition Language) é amplamente adotado no ecossistema GraphQL, e muitas bibliotecas e frameworks utilizam essa linguagem para definir esquemas e facilitar o desenvolvimento de APIs GraphQL.
+
+Uma dessas ferramentas é o **Prisma**, que funciona como um ORM (Object-Relational Mapping) moderno e inclui suporte a GraphQL. Com o Prisma, é possível gerar um modelo de dados em SDL para definir a estrutura do banco de dados e criar resolvers que conectam esses modelos à API GraphQL. Ele é especialmente útil para projetos que requerem um mapeamento eficiente entre a camada de dados e o esquema GraphQL.
+
+Outra alternativa é o **GraphQL Nexus**, uma biblioteca que permite definir esquemas GraphQL usando uma abordagem programática em TypeScript. Embora não utilize diretamente o SDL na forma escrita, Nexus compila esses esquemas para o formato SDL, combinando a clareza da linguagem de definição de schema com a segurança de tipos do TypeScript.
+
+O **GraphQL Yoga** é outra ferramenta interessante. Ele é baseado no GraphQL.js e facilita a criação de servidores GraphQL usando uma configuração mínima. Ele suporta o uso do SDL para definir esquemas e oferece uma experiência de desenvolvimento leve e extensível.
+
+Se você estiver usando o ecossistema Ruby, o **GraphQL Ruby** também é uma opção poderosa. Ele fornece suporte total à definição de esquemas usando DSLs (Domain-Specific Languages) em Ruby, mas também pode exportar e manipular esquemas em SDL, permitindo maior interoperabilidade.
+
+Ferramentas como o **AWS AppSync**, da Amazon Web Services, também permitem trabalhar com GraphQL e SDL. O AppSync é voltado para a criação de APIs escaláveis e inclui suporte nativo ao SDL para definição de esquemas e integração com diversos serviços de backend, como DynamoDB, Lambda e outros.
+
+Por fim, o **Relay** é uma biblioteca da Meta (Facebook) projetada para trabalhar com GraphQL em aplicativos React. Embora seja mais conhecida por otimizar o consumo de APIs GraphQL no cliente, o Relay utiliza o SDL para configurar fragmentos e esquemas de forma declarativa.
+
+Essas ferramentas demonstram como o SDL está enraizado no ecossistema GraphQL, seja como uma forma de definir esquemas de maneira agnóstica ou como parte de frameworks e bibliotecas que simplificam o desenvolvimento de APIs modernas e escaláveis. Cada uma delas oferece vantagens específicas dependendo do contexto do projeto, seja a integração com bancos de dados, a flexibilidade na definição de tipos ou a facilidade de configuração de servidores GraphQL.
 
 Veja como aplicar nas seguintes linguagens de programação:
 
