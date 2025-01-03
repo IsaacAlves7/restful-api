@@ -224,18 +224,18 @@ Existem ferramentas para trabalhar com SDL, como o Hasura e Apollo Server são f
 
 **Hasura** é uma plataforma pronta para GraphQL, gera automaticamente uma API GraphQL com base em seu banco de dados relacional (ex.: PostgreSQL, MySQL, SQL Server). Tem o foco em **Backend as a Service (BaaS)** oferecendo um sistema completo para criar e gerenciar APIs sem necessidade de escrever código do servidor. Ideal para CRUD rápido, excelente para aplicações que precisam expor dados relacionais em GraphQL com rapidez.
 
-- **Configuração automática**: A API é gerada automaticamente com base na estrutura do banco de dados.
-- **Pouco ou nenhum código necessário**: Regras e permissões podem ser configuradas via interface gráfica ou YAML.
-- **Extensão por Webhooks e funções remotas**: Para lógica personalizada, permite integração com APIs REST, funções remotas ou eventos assíncronos.
-- **Integração nativa**: Conecta-se diretamente a bancos relacionais como PostgreSQL.
-- **CRUD automático**: Gera resolvers automaticamente para consultas, inserções, atualizações e exclusões com base nas tabelas.
-- **Suporte a relacionamentos**: Detecta e configura automaticamente relações entre tabelas.
-- **Alto desempenho com caching interno**: Otimizado para interagir com bancos de dados.
-- **Escalabilidade vertical e horizontal**: Pode ser escalado facilmente com clusters.
-- **Desvantagem em lógica complexa**: Pode se tornar limitado em casos que exigem lógica muito customizada ou acesso a múltiplas fontes de dados.
-- **Interface administrativa**: Inclui um painel para gerenciar banco de dados, permissões, eventos e APIs.
-- **Menos flexibilidade para personalização**: Pode exigir Webhooks ou extensões se os requisitos não forem suportados nativamente.
-- **Infraestrutura pronta**: Inclui funcionalidades como WebSockets para subscriptions e suporte a eventos nativamente.
+- Configuração automática: A API é gerada automaticamente com base na estrutura do banco de dados.
+- Pouco ou nenhum código necessário: Regras e permissões podem ser configuradas via interface gráfica ou YAML.
+- Extensão por Webhooks e funções remotas: Para lógica personalizada, permite integração com APIs REST, funções remotas ou eventos assíncronos.
+- Integração nativa: Conecta-se diretamente a bancos relacionais como PostgreSQL.
+- CRUD automático: Gera resolvers automaticamente para consultas, inserções, atualizações e exclusões com base nas tabelas.
+- Suporte a relacionamentos: Detecta e configura automaticamente relações entre tabelas.
+- Alto desempenho com caching interno: Otimizado para interagir com bancos de dados.
+- Escalabilidade vertical e horizontal: Pode ser escalado facilmente com clusters.
+- Desvantagem em lógica complexa: Pode se tornar limitado em casos que exigem lógica muito customizada ou acesso a múltiplas fontes de dados.
+- Interface administrativa: Inclui um painel para gerenciar banco de dados, permissões, eventos e APIs.
+- Menos flexibilidade para personalização: Pode exigir Webhooks ou extensões se os requisitos não forem suportados nativamente.
+- Infraestrutura pronta: Inclui funcionalidades como WebSockets para subscriptions e suporte a eventos nativamente.
 - CRUD rápido em GraphQL para um banco de dados relacional.
 - Aplicações com lógica backend simples.
 - Prototipagem ou MVPs.
