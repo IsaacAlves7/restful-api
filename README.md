@@ -212,7 +212,7 @@ Exemplo, mutation para criar cards no Pipefy:
 ```
 
 ## [GraphQL] SDL - Schema Definition Language
-<a href="https://www.apollographql.com/docs/apollo-server/"><img src="https://github.com/user-attachments/assets/e64cec2c-554b-496a-b73a-9aba03948ad6" align="right" height="77"></a>
+<a href="https://www.apollographql.com/docs/apollo-server/"><img src="https://github.com/user-attachments/assets/e64cec2c-554b-496a-b73a-9aba03948ad6" align="right" height="177"></a>
 
 É importante trabalharmos com essa linguagem SDL, essa linguagem específica do Graphql, porque como o Graphql trabalha com várias linguagens de backend, como por exemplo Python, Node, JavaScript, usar essa linguagem dele garante uma padronização nos esquemas, por isso escrevemos os schemas usando essa linguagem própria do Graphql.
 
@@ -221,6 +221,8 @@ Então, como falamos anteriormente, o GraphQL tem sua própria linguagem, chamad
 Acabamos de criar nosso primeiro tipo, ainda vamos criar vários tipos, vamos falar bastante deles, então vamos em frente continuando para subirmos nosso primeiro servidor Graphql com Apollo. Para entender como essa linguagem funciona, sempre temos que ter em mente que o GraphQL trabalha com tipos, e saber quais tipos são esses.
 
 Existem ferramentas para trabalhar com SDL, como o Hasura e Apollo Server são ferramentas populares para trabalhar com GraphQL, mas possuem propósitos, arquiteturas e casos de uso diferentes. Aqui está uma comparação detalhada:
+
+<a href="https://www.apollographql.com/docs/apollo-server/"><img src="https://github.com/user-attachments/assets/bb2bb856-330a-4d29-8fed-4cbc97c618d8" align="right" height="77"></a>
 
 **Hasura** é uma plataforma pronta para GraphQL, gera automaticamente uma API GraphQL com base em seu banco de dados relacional (ex.: PostgreSQL, MySQL, SQL Server). Tem o foco em **Backend as a Service (BaaS)** oferecendo um sistema completo para criar e gerenciar APIs sem necessidade de escrever código do servidor. Ideal para CRUD rápido, excelente para aplicações que precisam expor dados relacionais em GraphQL com rapidez.
 
