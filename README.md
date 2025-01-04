@@ -242,7 +242,9 @@ Existem ferramentas para trabalhar com SDL, como o Hasura e Apollo Server são f
 - Aplicações com lógica backend simples.
 - Prototipagem ou MVPs.
 - Projetos com foco em tempo de entrega rápido.
-  
+
+<a href="https://www.apollographql.com/docs/"><img src="https://cdn.worldvectorlogo.com/logos/apollo-graphql-compact.svg" align="right" height="77"></a>
+
 **Apollo Server** é um servidor GraphQL personalizável, um framework para criar seu próprio servidor GraphQL com foco em flexibilidade e controle, ideal para construir resolvers e esquemas customizados, permitindo lógica complexa e integração com múltiplas fontes de dados e desenvolvimento sob medida que requer uma implementação explícita dos resolvers, oferecendo controle total sobre os dados e a lógica.
 
 - **Código sob medida**: Desenvolvedores definem os tipos GraphQL, resolvers e integrações com serviços externos manualmente.
